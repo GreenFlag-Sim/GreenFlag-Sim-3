@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101511">
+  <meta name="description" content="Share feedback and ideas with Green Flag, a friendly guide to learning sim racing.">
+  <title>Feedback — Green Flag Sim Racing</title>
+  <style>
+    :root { color-scheme: dark; --bg:#070a08; --panel:#0d120f; --ink:#f1f5ef; --muted:#9ba79d; --subtle:#68746b; --line:#26342a; --green:#00e676; --mono:ui-monospace,SFMono-Regular,Menlo,monospace; --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1120px,calc(100% - 48px)); margin-inline:auto; }
+    .site-header { height:82px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--ink); font-size:13px; font-weight:800; letter-spacing:.11em; }
+    .brand-mark { width:72px; height:36px; flex:0 0 auto; display:inline-flex; align-items:center; }
+    .brand-mark svg { display:block; width:100%; height:100%; overflow:visible; }
+    .brand-sub { display:block; margin-top:4px; color:var(--subtle); font:9px var(--mono); letter-spacing:.08em; }
+    .back-link { display:inline-flex; align-items:center; gap:12px; padding:12px 15px; border:1px solid var(--line); color:var(--muted); font:10px var(--mono); letter-spacing:.08em; transition:border-color .2s,color .2s; }
+    .back-link:hover { border-color:var(--green); color:var(--green); }
+    .back-link svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    main { padding:62px 0 90px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 22px; color:var(--muted); font:10px var(--mono); letter-spacing:.12em; }
+    .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 14px #00e67677; }
+    .hero { max-width:770px; margin:0 auto 36px; text-align:center; }
+    h1 { margin:0; font-size:clamp(42px,7vw,76px); line-height:1.02; letter-spacing:-.07em; }
+    h1 em { color:var(--green); font-family:Georgia,serif; font-weight:400; }
+    .intro { max-width:670px; margin:22px auto 0; color:var(--muted); font-size:15px; line-height:1.85; }
+    .feedback-card { max-width:760px; margin:0 auto; padding:clamp(22px,5vw,42px); border:1px solid var(--line); border-radius:8px; background:linear-gradient(145deg,#101712,var(--panel) 60%); box-shadow:0 25px 70px #0005; }
+    .card-heading { margin:0 0 8px; font-size:18px; letter-spacing:-.025em; }
+    .card-copy { margin:0 0 25px; color:var(--subtle); font-size:12px; line-height:1.7; }
+    form { display:grid; gap:20px; }
+    label { display:grid; gap:9px; color:var(--muted); font:10px var(--mono); letter-spacing:.09em; text-transform:uppercase; }
+    select,textarea { width:100%; border:1px solid var(--line); border-radius:4px; background:#080d09; color:var(--ink); padding:14px 15px; font:14px/1.65 var(--sans); letter-spacing:normal; text-transform:none; }
+    select:focus,textarea:focus { outline:1px solid var(--green); border-color:var(--green); }
+    textarea { min-height:180px; resize:vertical; }
+    .form-bottom { display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    .submit { display:inline-flex; align-items:center; gap:13px; padding:15px 18px; border:0; border-radius:3px; background:var(--green); color:var(--bg); font:800 10px var(--mono); letter-spacing:.08em; cursor:pointer; transition:transform .2s,background .2s; }
+    .submit:hover { transform:translateY(-2px); background:#32f28f; }
+    .submit svg { width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .note { max-width:340px; margin:0; color:var(--subtle); font-size:10px; line-height:1.7; }
+    .site-footer { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); color:var(--subtle); font-size:10px; }
+    @media (max-width:600px) {
+      .shell { width:calc(100% - 32px); }
+      .site-header { height:72px; }
+      .brand { gap:8px; font-size:11px; }
+      .brand-mark { width:58px; height:30px; }
+      .brand-sub { font-size:7px; }
+      .back-link { padding:10px 11px; font-size:9px; }
+      main { padding:52px 0 68px; }
+      .hero { margin-bottom:28px; }
+      .intro { font-size:13px; }
+      .site-footer { min-height:100px; flex-wrap:wrap; padding-block:20px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="index.html" aria-label="Green Flag home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 205 100" focusable="false"><g fill="none" stroke="var(--green)" stroke-width="10" stroke-linecap="round"><path d="M20 25h65M6 51h78M20 77h65"/></g><path d="M100 16h92l-20 27 20 27h-92z" fill="var(--green)"/><path d="M111 25h16v16h-16zm32 0h16v16h-16zm-16 16h16v16h-16zm32 0h16v16h-16z" fill="var(--bg)"/></svg></span>
+      <span>GREEN FLAG<span class="brand-sub">SIM RACING, START HERE</span></span>
+    </a>
+    <a class="back-link" href="index.html">BACK TO SITE <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg></a>
+  </header>
+  <main class="shell">
+    <div class="hero">
+      <p class="eyebrow">YOUR VOICE HELPS US IMPROVE</p>
+      <h1>We’d love to hear<br><em>what you have to say.</em></h1>
+      <p class="intro">Did a tip help you find a cleaner lap? Is there something you wish made more sense? Or do you have an idea for what we should cover next? We’d love to hear it. Your thoughts help make Green Flag a friendlier, more useful place for new sim racers.</p>
+    </div>
+    <section class="feedback-card" aria-labelledby="form-title">
+      <h2 class="card-heading" id="form-title">Send us a note</h2>
+      <p class="card-copy">Big ideas, small fixes, and honest suggestions are all welcome.</p>
+      <form id="feedback-form">
+        <label for="feedback-topic">What’s it about?
+          <select id="feedback-topic" name="topic"><option>Website feedback</option><option>Beginner guides</option><option>Sim racing equipment</option><option>Something else</option></select>
+        </label>
+        <label for="feedback-message">Your message
+          <textarea id="feedback-message" name="message" maxlength="1500" required placeholder="Tell us what you think..."></textarea>
+        </label>
+        <div class="form-bottom">
+          <button class="submit" type="submit">SEND FEEDBACK <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></button>
+          <p class="note">Your email app will open a draft for you to review and send. No name or contact details needed. Please don’t include personal information.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer shell"><span>Made for the next generation of racers.</span><a href="index.html">BACK TO GREEN FLAG</a></footer>
+  <script>
+    document.querySelector('#feedback-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const topic = String(formData.get('topic') || 'Website feedback');
+      const message = String(formData.get('message') || '').trim();
+      if (!message) return;
+      const subject = `Green Flag feedback: ${topic}`;
+      const body = `Topic: ${topic}\n\n${message}`;
+      window.location.href = `mailto:adamlego44@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>

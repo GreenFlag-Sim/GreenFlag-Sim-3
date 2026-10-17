@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101511">
+  <meta name="description" content="Learn a simple first-lap routine for finding your rhythm in sim racing.">
+  <title>Find Your First Rhythm — Green Flag</title>
+  <style>
+    :root { color-scheme:dark; --bg:#070a08; --panel:#0d120f; --ink:#f1f5ef; --muted:#9ba79d; --subtle:#68746b; --line:#26342a; --green:#00e676; --mono:ui-monospace,SFMono-Regular,Menlo,monospace; --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1120px,calc(100% - 48px)); margin-inline:auto; }
+    .site-header { height:82px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:12px; font-size:13px; font-weight:800; letter-spacing:.11em; }
+    .brand-mark { width:72px; height:36px; flex:none; }
+    .brand-mark svg { display:block; width:100%; height:100%; }
+    .brand-sub { display:block; margin-top:4px; color:var(--subtle); font:9px var(--mono); letter-spacing:.08em; }
+    .back-link { display:inline-flex; align-items:center; gap:10px; padding:12px 15px; border:1px solid var(--line); color:var(--muted); font:10px var(--mono); letter-spacing:.08em; }
+    .back-link:hover { border-color:var(--green); color:var(--green); }
+    .back-link svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    main { padding:72px 0 94px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 20px; color:var(--muted); font:10px var(--mono); letter-spacing:.12em; }
+    .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 14px #00e67677; }
+    .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; padding-bottom:68px; border-bottom:1px solid var(--line); }
+    h1 { margin:0; max-width:650px; font-size:clamp(48px,7vw,82px); line-height:.98; letter-spacing:-.075em; }
+    h1 em, h2 em { color:var(--green); font-family:Georgia,serif; font-weight:400; }
+    .intro { max-width:600px; margin:22px 0 0; color:var(--muted); font-size:15px; line-height:1.85; }
+    .track-card { padding:18px; border:1px solid var(--line); background:linear-gradient(145deg,#111812,#090d0a); }
+    .track-card svg { display:block; width:100%; height:auto; }
+    .track-caption { display:flex; justify-content:space-between; gap:12px; margin:14px 0 0; color:var(--subtle); font:9px var(--mono); letter-spacing:.08em; }
+    .steps { padding-top:56px; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:26px; }
+    .section-head h2 { margin:0; font-size:clamp(32px,4vw,48px); letter-spacing:-.06em; }
+    .section-head p { max-width:360px; margin:0; color:var(--muted); font-size:12px; line-height:1.7; }
+    .step-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .step { min-height:210px; padding:23px; border:1px solid var(--line); background:var(--panel); }
+    .step-number { color:var(--green); font:10px var(--mono); letter-spacing:.1em; }
+    .step h3 { margin:25px 0 10px; font-size:19px; letter-spacing:-.03em; }
+    .step p { margin:0; color:var(--muted); font-size:12px; line-height:1.75; }
+    .corner-note { display:grid; grid-template-columns:.75fr 1.25fr; gap:32px; align-items:start; margin-top:38px; padding:27px 30px; border-left:2px solid var(--green); background:#0b100c; }
+    .corner-note .eyebrow { margin-bottom:13px; }
+    .corner-note h2 { margin:0; font-size:clamp(25px,3vw,34px); letter-spacing:-.05em; }
+    .corner-note > p { margin:0; color:var(--muted); font-size:12px; line-height:1.85; }
+    .practice { display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center; margin-top:24px; padding:30px; border:1px solid #254330; background:#0b140e; }
+    .practice h2 { margin:0 0 10px; font-size:25px; letter-spacing:-.04em; }
+    .practice p { max-width:670px; margin:0; color:var(--muted); font-size:12px; line-height:1.8; }
+    .lap-count { color:var(--green); font:11px var(--mono); letter-spacing:.08em; white-space:nowrap; }
+    .game-link { position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,.72fr); align-items:center; gap:28px; overflow:hidden; min-height:300px; margin-top:38px; padding:38px 42px; border:4px solid var(--green); background:#0b100c; box-shadow:none; }
+    .game-link:before { display:none; }
+    .game-link-copy,.game-link-art { position:relative; z-index:1; }
+    .game-link-tag { margin:0 0 13px; color:var(--green); font:10px var(--mono); letter-spacing:.14em; }
+    .game-link h2 { max-width:620px; margin:0 0 12px; font-size:clamp(30px,4.5vw,52px); line-height:.98; letter-spacing:-.065em; }
+    .game-link p { max-width:540px; margin:0 0 23px; color:var(--muted); font-size:13px; line-height:1.75; }
+    .game-link a { display:inline-flex; align-items:center; gap:14px; min-height:52px; padding:0 20px; background:var(--green); color:var(--bg); font:900 10px var(--mono); letter-spacing:.08em; box-shadow:none; transition:transform .18s,background .18s; }
+    .game-link a:hover { transform:translateY(-2px); background:#55ffa7; }
+    .game-link a svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .game-link-art svg { display:block; width:100%; overflow:visible; filter:none; }
+    .game-link-art .lab-track { fill:none; stroke:#48574b; stroke-width:19; stroke-linecap:round; stroke-linejoin:round; }
+    .game-link-art .lab-highlight { fill:none; stroke:var(--green); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:9 7; animation:lab-flow 9s linear infinite; }
+    .game-link-art circle { fill:#08100b; stroke:var(--green); stroke-width:3; }
+    .game-link-art text { fill:#b9c6bb; font:9px var(--mono); letter-spacing:1px; }
+    @keyframes lab-flow { to { stroke-dashoffset:-128; } }
+    .site-footer { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); color:var(--subtle); font-size:10px; }
+    .site-footer a:hover { color:var(--green); }
+    @media(max-width:700px) {
+      .shell { width:calc(100% - 32px); }
+      .site-header { height:72px; }
+      .brand { gap:8px; font-size:11px; }
+      .brand-mark { width:58px; height:30px; }
+      .brand-sub { font-size:7px; }
+      .back-link { padding:10px 11px; font-size:9px; }
+      main { padding:48px 0 68px; }
+      .hero { grid-template-columns:1fr; gap:30px; padding-bottom:48px; }
+      h1 { font-size:clamp(48px,13vw,70px); }
+      .intro { font-size:13px; }
+      .section-head { display:block; }
+      .section-head p { margin-top:13px; }
+      .step-grid { grid-template-columns:1fr; }
+      .step { min-height:0; }
+      .step h3 { margin-top:16px; }
+      .corner-note { grid-template-columns:1fr; gap:13px; margin-top:28px; padding:22px; }
+      .practice { grid-template-columns:1fr; gap:18px; margin-top:18px; padding:22px; }
+      .game-link { grid-template-columns:1fr; gap:12px; min-height:0; margin-top:25px; padding:26px 22px; }
+      .game-link h2 { font-size:34px; }
+      .game-link p { font-size:12px; }
+      .game-link-art { grid-row:1; margin:4px -4px 0; }
+      .game-link-art svg { max-height:170px; }
+      .site-footer { min-height:100px; flex-wrap:wrap; padding-block:20px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="index.html" aria-label="Green Flag home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 205 100" focusable="false"><g fill="none" stroke="var(--green)" stroke-width="10" stroke-linecap="round"><path d="M20 25h65M6 51h78M20 77h65"/></g><path d="M100 16h92l-20 27 20 27h-92z" fill="var(--green)"/><path d="M111 25h16v16h-16zm32 0h16v16h-16zm-16 16h16v16h-16zm32 0h16v16h-16z" fill="var(--bg)"/></svg></span>
+      <span>GREEN FLAG<span class="brand-sub">SIM RACING, START HERE</span></span>
+    </a>
+    <a class="back-link" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg> BACK TO SITE</a>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">01 / THE FOUNDATION</p>
+        <h1 id="page-title">Find your first <em>rhythm.</em></h1>
+        <p class="intro">The fastest lap isn’t always made by driving with big aggression. Clean, consistent racing is the key: make the car predictable, then build speed one small step at a time.</p>
+      </div>
+      <div class="track-card">
+        <svg viewBox="-60 0 640 300" role="img" aria-label="A racing line through a sequence of corners, using the full width of the track: starting wide on the outside, touching the inside kerb at the first apex, sweeping across to the inside kerb at the second apex, then the third, and finally running out to the outside kerb on the exit">
+          <rect x="-59" y="1" width="638" height="298" fill="#080d09" stroke="#26342a"/>
+          <path d="M-110 232 L-25 232 C88 232 96 64 246 64 S351 232 456 232 S538 126 596 126" fill="none" stroke="#59635b" stroke-width="76"/>
+          <path d="M-110 232 L-25 232 C88 232 96 64 246 64 S351 232 456 232 S538 126 596 126" fill="none" stroke="#a3aca4" stroke-width="2" stroke-dasharray="9 12" opacity=".5"/>
+          <path d="M27.7 169.3 L28.4 168.6 L29.1 167.9 L29.8 167.2 L30.6 166.5 L31.3 165.7 L32.0 165.0 L32.7 164.2 L33.4 163.5 L34.2 162.7 L34.9 162.0 L35.6 161.2 L36.4 160.4 L37.1 159.6 L37.8 158.8 L38.5 158.0 L39.3 157.2 L40.0 156.4 L40.7 155.6 L41.5 154.7 L42.2 153.9 L42.9 153.1 L43.7 152.2 L44.4 151.4 L45.1 150.5 L45.9 149.6 L46.6 148.8 L47.4 147.9 L48.1 147.0 L48.8 146.1 L49.6 145.3 L50.3 144.4 L51.1 143.5 L51.8 142.6 L52.6 141.7 L53.3 140.8 L54.1 139.9 L54.8 138.9 L55.6 138.0 L56.4 137.1 L57.1 136.2 L57.9 135.2 L58.7 134.3 L59.4 133.4 L60.2 132.4 L61.0 131.5 L61.8 130.5 L62.5 129.6 L63.3 128.6 L64.1 127.7 L64.9 126.7 L65.7 125.8 L66.5 124.8 L67.3 123.8 L68.1 122.9 L68.9 121.9 L69.7 120.9 L70.5 120.0 L71.3 119.0 L72.2 118.0 L73.0 117.0 L73.8 116.1 L74.6 115.1 L75.5 114.1 L76.3 113.1 L77.2 112.1 L78.0 111.2 L78.9 110.2 L79.7 109.2 L80.6 108.2" fill="none" stroke="#e9eee8" stroke-width="7"/><path d="M27.7 169.3 L28.4 168.6 L29.1 167.9 L29.8 167.2 L30.6 166.5 L31.3 165.7 L32.0 165.0 L32.7 164.2 L33.4 163.5 L34.2 162.7 L34.9 162.0 L35.6 161.2 L36.4 160.4 L37.1 159.6 L37.8 158.8 L38.5 158.0 L39.3 157.2 L40.0 156.4 L40.7 155.6 L41.5 154.7 L42.2 153.9 L42.9 153.1 L43.7 152.2 L44.4 151.4 L45.1 150.5 L45.9 149.6 L46.6 148.8 L47.4 147.9 L48.1 147.0 L48.8 146.1 L49.6 145.3 L50.3 144.4 L51.1 143.5 L51.8 142.6 L52.6 141.7 L53.3 140.8 L54.1 139.9 L54.8 138.9 L55.6 138.0 L56.4 137.1 L57.1 136.2 L57.9 135.2 L58.7 134.3 L59.4 133.4 L60.2 132.4 L61.0 131.5 L61.8 130.5 L62.5 129.6 L63.3 128.6 L64.1 127.7 L64.9 126.7 L65.7 125.8 L66.5 124.8 L67.3 123.8 L68.1 122.9 L68.9 121.9 L69.7 120.9 L70.5 120.0 L71.3 119.0 L72.2 118.0 L73.0 117.0 L73.8 116.1 L74.6 115.1 L75.5 114.1 L76.3 113.1 L77.2 112.1 L78.0 111.2 L78.9 110.2 L79.7 109.2 L80.6 108.2" fill="none" stroke="#d9473f" stroke-width="7" stroke-dasharray="6 6"/><path d="M228.6 103.0 L229.7 102.9 L230.7 102.8 L231.7 102.7 L232.8 102.6 L233.8 102.5 L234.9 102.4 L235.9 102.3 L237.0 102.3 L238.0 102.2 L239.1 102.2 L240.2 102.1 L241.2 102.1 L242.3 102.0 L243.4 102.0 L244.4 102.0 L245.5 102.0 L246.6 102.0 L247.7 102.0 L248.7 102.0 L249.8 102.0 L250.9 102.1 L251.9 102.1 L253.0 102.2 L254.0 102.2 L255.1 102.3 L256.1 102.3 L257.1 102.4 L258.2 102.5 L259.2 102.6 L260.2 102.7 L261.2 102.8 L262.2 102.9 L263.2 103.0 L264.2 103.2 L265.2 103.3 L266.1 103.4 L267.1 103.6 L268.1 103.8 L269.0 103.9 L270.0 104.1 L270.9 104.3 L271.8 104.5 L272.7 104.7 L273.7 104.9 L274.6 105.1 L275.5 105.4 L276.4 105.6 L277.2 105.8 L278.1 106.1 L279.0 106.4 L279.8 106.6 L280.7 106.9 L281.5 107.2 L282.4 107.5 L283.2 107.8 L284.0 108.1 L284.8 108.4 L285.6 108.7 L286.4 109.1 L287.2 109.4 L288.0 109.8 L288.7 110.1 L289.5 110.5 L290.2 110.9 L291.0 111.3 L291.7 111.7 L292.5 112.1 L293.2 112.5 L293.9 112.9" fill="none" stroke="#e9eee8" stroke-width="7"/><path d="M228.6 103.0 L229.7 102.9 L230.7 102.8 L231.7 102.7 L232.8 102.6 L233.8 102.5 L234.9 102.4 L235.9 102.3 L237.0 102.3 L238.0 102.2 L239.1 102.2 L240.2 102.1 L241.2 102.1 L242.3 102.0 L243.4 102.0 L244.4 102.0 L245.5 102.0 L246.6 102.0 L247.7 102.0 L248.7 102.0 L249.8 102.0 L250.9 102.1 L251.9 102.1 L253.0 102.2 L254.0 102.2 L255.1 102.3 L256.1 102.3 L257.1 102.4 L258.2 102.5 L259.2 102.6 L260.2 102.7 L261.2 102.8 L262.2 102.9 L263.2 103.0 L264.2 103.2 L265.2 103.3 L266.1 103.4 L267.1 103.6 L268.1 103.8 L269.0 103.9 L270.0 104.1 L270.9 104.3 L271.8 104.5 L272.7 104.7 L273.7 104.9 L274.6 105.1 L275.5 105.4 L276.4 105.6 L277.2 105.8 L278.1 106.1 L279.0 106.4 L279.8 106.6 L280.7 106.9 L281.5 107.2 L282.4 107.5 L283.2 107.8 L284.0 108.1 L284.8 108.4 L285.6 108.7 L286.4 109.1 L287.2 109.4 L288.0 109.8 L288.7 110.1 L289.5 110.5 L290.2 110.9 L291.0 111.3 L291.7 111.7 L292.5 112.1 L293.2 112.5 L293.9 112.9" fill="none" stroke="#d9473f" stroke-width="7" stroke-dasharray="6 6"/><path d="M412.7 153.4 L413.1 154.3 L413.6 155.2 L414.0 156.0 L414.4 156.9 L414.8 157.7 L415.3 158.6 L415.7 159.4 L416.1 160.2 L416.5 161.1 L417.0 161.9 L417.4 162.7 L417.8 163.5 L418.2 164.3 L418.7 165.0 L419.1 165.8 L419.5 166.6 L419.9 167.3 L420.3 168.1 L420.8 168.8 L421.2 169.5 L421.6 170.2 L422.0 171.0 L422.4 171.6 L422.9 172.3 L423.3 173.0 L423.7 173.7 L424.1 174.3 L424.5 175.0 L424.9 175.6 L425.4 176.2 L425.8 176.8 L426.2 177.4 L426.6 178.0 L427.0 178.6 L427.4 179.1 L427.8 179.7 L428.2 180.2 L428.6 180.7 L429.0 181.3 L429.4 181.8 L429.9 182.2 L430.2 182.7 L430.6 183.2 L431.0 183.6 L431.4 184.0 L431.8 184.5 L432.2 184.9 L432.6 185.2 L433.0 185.6 L433.4 186.0 L433.7 186.3 L434.1 186.7 L434.5 187.0 L434.8 187.3 L435.2 187.6 L435.6 187.9 L435.9 188.2 L436.3 188.5 L436.6 188.7 L437.0 189.0 L437.4 189.2 L437.7 189.5 L438.1 189.7 L438.4 189.9 L438.8 190.1 L439.1 190.3 L439.5 190.5 L439.8 190.7 L440.2 190.9" fill="none" stroke="#e9eee8" stroke-width="7"/><path d="M412.7 153.4 L413.1 154.3 L413.6 155.2 L414.0 156.0 L414.4 156.9 L414.8 157.7 L415.3 158.6 L415.7 159.4 L416.1 160.2 L416.5 161.1 L417.0 161.9 L417.4 162.7 L417.8 163.5 L418.2 164.3 L418.7 165.0 L419.1 165.8 L419.5 166.6 L419.9 167.3 L420.3 168.1 L420.8 168.8 L421.2 169.5 L421.6 170.2 L422.0 171.0 L422.4 171.6 L422.9 172.3 L423.3 173.0 L423.7 173.7 L424.1 174.3 L424.5 175.0 L424.9 175.6 L425.4 176.2 L425.8 176.8 L426.2 177.4 L426.6 178.0 L427.0 178.6 L427.4 179.1 L427.8 179.7 L428.2 180.2 L428.6 180.7 L429.0 181.3 L429.4 181.8 L429.9 182.2 L430.2 182.7 L430.6 183.2 L431.0 183.6 L431.4 184.0 L431.8 184.5 L432.2 184.9 L432.6 185.2 L433.0 185.6 L433.4 186.0 L433.7 186.3 L434.1 186.7 L434.5 187.0 L434.8 187.3 L435.2 187.6 L435.6 187.9 L435.9 188.2 L436.3 188.5 L436.6 188.7 L437.0 189.0 L437.4 189.2 L437.7 189.5 L438.1 189.7 L438.4 189.9 L438.8 190.1 L439.1 190.3 L439.5 190.5 L439.8 190.7 L440.2 190.9" fill="none" stroke="#d9473f" stroke-width="7" stroke-dasharray="6 6"/><path d="M548.7 235.7 L549.4 235.0 L550.2 234.3 L550.9 233.6 L551.6 232.9 L552.3 232.2 L552.9 231.4 L553.6 230.7 L554.3 230.0 L554.9 229.3 L555.6 228.5 L556.2 227.8 L556.9 227.0 L557.5 226.3 L558.1 225.6 L558.7 224.8 L559.3 224.1 L559.9 223.3 L560.5 222.6 L561.1 221.8 L561.7 221.1 L562.2 220.4 L562.8 219.6 L563.4 218.9 L563.9 218.1 L564.4 217.4 L565.0 216.6 L565.5 215.9 L566.0 215.1 L566.5 214.4 L567.0 213.6 L567.5 212.9 L568.0 212.1 L568.5 211.4 L569.0 210.7 L569.5 209.9 L569.9 209.2 L570.4 208.5 L570.9 207.7 L571.3 207.0 L571.8 206.3 L572.2 205.5 L572.6 204.8 L573.1 204.1 L573.5 203.4 L573.9 202.6 L574.3 201.9 L574.7 201.2 L575.1 200.5 L575.5 199.8 L575.9 199.1 L576.3 198.4 L576.7 197.7 L577.1 197.0 L577.5 196.3 L577.9 195.6 L578.2 194.9 L578.6 194.2 L579.0 193.6 L579.3 192.9 L579.7 192.2 L580.0 191.6 L580.4 190.9 L580.7 190.2 L581.1 189.6 L581.4 188.9 L581.7 188.3 L582.1 187.6 L582.4 187.0 L582.7 186.4" fill="none" stroke="#e9eee8" stroke-width="7"/><path d="M548.7 235.7 L549.4 235.0 L550.2 234.3 L550.9 233.6 L551.6 232.9 L552.3 232.2 L552.9 231.4 L553.6 230.7 L554.3 230.0 L554.9 229.3 L555.6 228.5 L556.2 227.8 L556.9 227.0 L557.5 226.3 L558.1 225.6 L558.7 224.8 L559.3 224.1 L559.9 223.3 L560.5 222.6 L561.1 221.8 L561.7 221.1 L562.2 220.4 L562.8 219.6 L563.4 218.9 L563.9 218.1 L564.4 217.4 L565.0 216.6 L565.5 215.9 L566.0 215.1 L566.5 214.4 L567.0 213.6 L567.5 212.9 L568.0 212.1 L568.5 211.4 L569.0 210.7 L569.5 209.9 L569.9 209.2 L570.4 208.5 L570.9 207.7 L571.3 207.0 L571.8 206.3 L572.2 205.5 L572.6 204.8 L573.1 204.1 L573.5 203.4 L573.9 202.6 L574.3 201.9 L574.7 201.2 L575.1 200.5 L575.5 199.8 L575.9 199.1 L576.3 198.4 L576.7 197.7 L577.1 197.0 L577.5 196.3 L577.9 195.6 L578.2 194.9 L578.6 194.2 L579.0 193.6 L579.3 192.9 L579.7 192.2 L580.0 191.6 L580.4 190.9 L580.7 190.2 L581.1 189.6 L581.4 188.9 L581.7 188.3 L582.1 187.6 L582.4 187.0 L582.7 186.4" fill="none" stroke="#d9473f" stroke-width="7" stroke-dasharray="6 6"/>
+          <path d="M-110.0 264.6 C-109.0 264.6 -106.0 264.6 -104.0 264.6 C-102.0 264.6 -100.0 264.6 -98.0 264.5 C-96.0 264.5 -94.0 264.5 -92.0 264.5 C-90.0 264.5 -88.0 264.4 -86.0 264.4 C-84.0 264.3 -82.0 264.3 -80.0 264.2 C-78.0 264.1 -76.0 264.0 -74.0 263.9 C-72.0 263.7 -70.0 263.6 -68.0 263.4 C-66.0 263.2 -64.0 262.9 -62.0 262.6 C-60.0 262.3 -58.0 262.0 -56.0 261.6 C-54.0 261.2 -52.0 260.7 -50.0 260.2 C-48.0 259.7 -46.0 259.1 -44.0 258.4 C-42.0 257.8 -40.0 257.1 -38.0 256.3 C-36.0 255.5 -34.0 254.6 -32.0 253.8 C-30.0 252.9 -28.1 251.9 -26.0 250.9 C-23.9 249.9 -21.5 248.9 -19.3 247.7 C-17.1 246.5 -14.9 245.3 -12.7 243.9 C-10.6 242.6 -8.6 241.2 -6.6 239.7 C-4.6 238.3 -2.7 236.7 -0.9 235.2 C0.9 233.6 2.6 232.0 4.3 230.3 C6.0 228.7 7.5 227.0 9.0 225.3 C10.5 223.6 11.9 221.9 13.3 220.2 C14.6 218.4 15.9 216.7 17.1 214.9 C18.3 213.2 19.4 211.4 20.5 209.7 C21.6 207.9 22.6 206.2 23.6 204.4 C24.6 202.7 25.6 200.9 26.5 199.2 C27.4 197.4 28.3 195.7 29.2 194.0 C30.0 192.2 30.8 190.5 31.7 188.8 C32.5 187.0 33.3 185.3 34.1 183.6 C34.9 181.9 35.7 180.2 36.6 178.5 C37.4 176.8 38.2 175.1 39.0 173.5 C39.9 171.8 40.7 170.1 41.6 168.5 C42.5 166.8 43.4 165.2 44.3 163.5 C45.2 161.9 46.2 160.3 47.2 158.7 C48.2 157.1 49.2 155.5 50.3 154.0 C51.4 152.4 52.5 150.8 53.6 149.3 C54.8 147.8 56.0 146.3 57.3 144.8 C58.5 143.3 59.8 141.8 61.2 140.4 C62.5 139.0 63.9 137.5 65.4 136.1 C66.8 134.7 68.4 133.4 69.9 132.0 C71.5 130.7 73.1 129.3 74.7 128.0 C76.4 126.7 78.1 125.5 79.8 124.2 C81.5 123.0 83.3 121.8 85.1 120.6 C86.9 119.4 88.8 118.2 90.7 117.1 C92.6 115.9 94.5 114.8 96.5 113.8 C98.4 112.7 100.4 111.7 102.5 110.6 C104.5 109.6 106.5 108.7 108.6 107.7 C110.6 106.8 112.7 105.8 114.8 105.0 C116.9 104.1 119.1 103.3 121.2 102.4 C123.3 101.6 125.5 100.9 127.6 100.1 C129.7 99.4 131.9 98.7 134.1 98.0 C136.2 97.4 138.4 96.8 140.5 96.2 C142.7 95.6 144.8 95.0 147.0 94.5 C149.1 94.0 151.3 93.6 153.4 93.1 C155.5 92.7 157.7 92.3 159.8 92.0 C161.9 91.6 164.0 91.3 166.1 91.0 C168.1 90.8 170.2 90.5 172.3 90.3 C174.3 90.1 176.3 90.0 178.3 89.8 C180.4 89.7 182.3 89.6 184.3 89.5 C186.3 89.5 188.2 89.4 190.2 89.4 C192.1 89.4 194.0 89.4 195.9 89.5 C197.8 89.5 199.7 89.6 201.5 89.7 C203.4 89.8 205.2 89.9 207.0 90.0 C208.9 90.2 210.7 90.3 212.5 90.5 C214.2 90.7 216.0 90.9 217.8 91.1 C219.5 91.3 221.3 91.5 223.0 91.7 C224.8 91.9 226.5 92.1 228.2 92.4 C229.9 92.6 231.6 92.9 233.3 93.1 C235.0 93.4 236.7 93.6 238.4 93.9 C240.1 94.1 241.8 94.4 243.5 94.6 C245.2 94.9 246.9 95.1 248.6 95.4 C250.3 95.6 251.9 95.8 253.5 96.1 C255.2 96.3 256.8 96.5 258.4 96.7 C260.0 97.0 261.6 97.2 263.1 97.4 C264.7 97.6 266.2 97.8 267.8 98.0 C269.3 98.2 270.8 98.4 272.3 98.6 C273.8 98.7 275.3 98.9 276.8 99.1 C278.3 99.3 279.8 99.5 281.3 99.7 C282.8 99.8 284.3 100.0 285.7 100.2 C287.2 100.4 288.7 100.6 290.2 100.8 C291.7 101.0 293.2 101.3 294.7 101.5 C296.2 101.8 297.8 102.0 299.3 102.3 C300.9 102.6 302.4 102.9 304.0 103.2 C305.6 103.6 307.2 103.9 308.9 104.4 C310.5 104.8 312.2 105.2 313.9 105.7 C315.6 106.2 317.3 106.7 319.0 107.3 C320.8 107.9 322.6 108.5 324.3 109.2 C326.1 109.9 328.0 110.6 329.8 111.4 C331.6 112.2 333.5 113.0 335.4 113.9 C337.2 114.8 339.1 115.7 341.0 116.7 C342.9 117.7 344.8 118.7 346.8 119.7 C348.7 120.8 350.6 121.9 352.5 123.0 C354.5 124.2 356.4 125.4 358.3 126.6 C360.3 127.8 362.2 129.0 364.1 130.3 C366.0 131.6 367.9 132.9 369.8 134.2 C371.7 135.5 373.6 136.8 375.4 138.2 C377.3 139.5 379.1 140.9 381.0 142.3 C382.8 143.7 384.6 145.1 386.3 146.5 C388.1 147.9 389.8 149.3 391.5 150.7 C393.2 152.1 394.8 153.5 396.4 154.9 C398.1 156.3 399.6 157.7 401.2 159.1 C402.7 160.5 404.2 161.9 405.6 163.2 C407.0 164.6 408.4 165.9 409.7 167.3 C411.0 168.6 412.3 169.9 413.5 171.2 C414.7 172.5 415.8 173.7 416.9 175.0 C418.0 176.2 419.0 177.5 420.0 178.6 C421.0 179.8 421.9 181.0 422.7 182.2 C423.5 183.3 424.3 184.5 425.0 185.6 C425.8 186.7 426.4 187.8 427.1 188.9 C427.7 190.1 428.3 191.2 428.9 192.3 C429.4 193.4 430.0 194.5 430.5 195.7 C431.1 196.9 431.6 198.0 432.2 199.3 C432.8 200.5 433.5 201.7 434.2 203.0 C434.9 204.3 435.7 205.7 436.6 207.0 C437.5 208.4 438.4 209.8 439.6 211.1 C440.7 212.5 441.9 213.9 443.2 215.3 C444.6 216.7 446.0 218.1 447.6 219.4 C449.1 220.8 450.8 222.1 452.6 223.4 C454.3 224.7 456.2 226.0 458.2 227.2 C460.1 228.4 462.1 229.6 464.2 230.7 C466.2 231.8 468.3 232.9 470.5 233.9 C472.6 234.9 474.8 235.9 477.1 236.7 C479.4 237.6 481.7 238.4 484.1 239.0 C486.5 239.7 488.9 240.3 491.4 240.7 C493.9 241.1 496.5 241.4 499.1 241.6 C501.6 241.8 504.3 241.8 506.9 241.6 C509.5 241.5 512.2 241.2 514.9 240.7 C517.5 240.3 520.2 239.6 522.8 238.8 C525.4 238.0 528.0 237.0 530.5 235.9 C533.0 234.8 535.4 233.5 537.8 232.1 C540.1 230.7 542.4 229.2 544.6 227.6 C546.7 226.0 548.8 224.2 550.7 222.4 C552.7 220.6 554.5 218.7 556.3 216.8 C558.0 214.9 559.6 212.9 561.2 211.0 C562.7 209.0 564.1 207.0 565.5 205.0 C566.9 203.0 568.1 201.0 569.3 199.1 C570.6 197.1 571.7 195.1 572.8 193.2 C573.9 191.3 574.9 189.4 575.9 187.5 C576.9 185.6 577.9 183.8 578.8 182.1 C579.7 180.3 580.6 178.6 581.5 176.9 C582.4 175.3 583.2 173.7 584.1 172.2 C584.9 170.8 585.7 169.3 586.5 168.1 C587.2 166.8 588.0 165.6 588.7 164.5 C589.4 163.5 590.1 162.6 590.7 161.8 C591.3 161.1 591.9 160.5 592.3 160.0 C592.7 159.6 593.1 159.3 593.3 159.1 C593.5 158.9 593.6 158.9 593.7 158.9 C593.8 158.8 593.8 158.8 593.8 158.8" fill="none" stroke="#00e676" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="-4" cy="237" r="7" fill="#080d09" stroke="#00e676" stroke-width="3"/>
+          <circle cx="57" cy="145" r="8" fill="#00e676"/>
+          <circle cx="265" cy="98" r="8" fill="#00e676"/>
+          <circle cx="423" cy="182" r="8" fill="#00e676"/>
+          <circle cx="556" cy="217" r="7" fill="#080d09" stroke="#00e676" stroke-width="3"/>
+          <g fill="#9ba79d" font-family="monospace" font-size="13">
+            <text x="-44" y="293">BRAKE EARLY</text>
+            <text x="0" y="128">APEX 1</text>
+            <text x="244" y="138">APEX 2</text>
+            <text x="450" y="160">APEX 3</text>
+            <text x="405" y="293">UNWIND &amp; EXIT</text>
+          </g>
+        </svg>
+        <p class="track-caption"><span>OUTSIDE · APEX TO APEX · OUTSIDE</span><span>KEEP IT SMOOTH</span></p>
+      </div>
+    </section>
+    <section class="steps" aria-labelledby="steps-title">
+      <div class="section-head"><h2 id="steps-title">Three things to focus on.</h2><p>Pick one track and one car. Keep the same settings while you practise so it’s easier to notice what you’re improving.</p></div>
+      <div class="step-grid">
+        <article class="step"><span class="step-number">01 / LOOK AHEAD</span><h3>Look where you want to go</h3><p>Try to look toward the next part of the track instead of staring right in front of the car. This gives you more time to react.</p></article>
+        <article class="step"><span class="step-number">02 / BRAKE IN A STRAIGHT LINE</span><h3>Slow down before the turn</h3><p>Choose a clear marker, like a board or a change in the barrier. Brake before the corner, then ease off as you turn in.</p></article>
+        <article class="step"><span class="step-number">03 / BE SMOOTH</span><h3>Make one clean turn</h3><p>A useful starting point is to begin wide, move toward the inside near the middle, then let the car run back out. The best line can change with the corners around it.</p></article>
+      </div>
+      <aside class="corner-note" aria-labelledby="corner-note-title"><div><p class="eyebrow">READ THE WHOLE SECTION</p><h2 id="corner-note-title">Corners work together.</h2></div><p>The same turn can need a different line depending on what comes just before and after it. A previous corner may affect the side of the track you arrive from. If this turn leads onto a long straight, a later apex can help you get on the power sooner. If another turn follows quickly, you may need to give up a little space here to set up the next one. Look at the sequence, not just one corner at a time.</p></aside>
+      <div class="practice"><div><h2>A simple first practice</h2><p>Drive five laps at a comfortable pace. For the first few, focus on staying on track. Then choose one corner and try to brake at the same marker each lap. If you make a mistake, reset and try again—every lap is useful practice.</p></div><span class="lap-count">5 CALM LAPS ✳</span></div>
+    </section>
+    <section class="game-link" aria-labelledby="game-link-title"><div class="game-link-copy"><p class="game-link-tag">24 F1 CIRCUITS · 28 CHALLENGES · DRY + WET</p><h2 id="game-link-title">Can you read the corner sequence?</h2><p>Try the corner-line challenge. Every round changes the circuit and asks you to connect the corner before, the featured turn and the one after it.</p><a href="corner-lines.html?v=6">ENTER THE LINE LAB <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div><div class="game-link-art" aria-hidden="true"><svg viewBox="0 0 520 190"><path class="lab-track" d="M20 112 C44 112 47 52 94 52 S151 137 196 137 S240 45 291 45 S350 143 391 143 S435 72 500 72"/><path class="lab-highlight" d="M20 112 C44 112 47 52 94 52 S151 137 196 137 S240 45 291 45 S350 143 391 143 S435 72 500 72"/><circle cx="94" cy="52" r="8"/><circle cx="291" cy="45" r="8"/><circle cx="391" cy="143" r="8"/><text x="51" y="30">BEFORE</text><text x="251" y="22">FEATURE TURN</text><text x="370" y="176">AFTER</text></svg></div></section>
+  </main>
+  <footer class="site-footer shell"><span>Made for the next generation of racers.</span><a href="index.html">BACK TO GREEN FLAG</a></footer>
+</body>
+</html>
